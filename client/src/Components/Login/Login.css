@@ -1,0 +1,47 @@
+
+  .auth-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+  }
+  
+  .login
+   {
+    perspective: 1000px;
+    transition: perspective 1s ease;
+  }
+  
+  .login {
+    perspective: 1000px;
+  }
+  
+  .signup {
+    perspective: 1000px;
+    transform: rotateY(180deg);
+  }
+  
+  /* Responsive Styles */
+  
+  @media (max-width: 600px) {
+    .auth-container {
+      padding: 0 10px;
+    }
+  
+    
+    .login {
+      width: 90%;
+    }
+  }
+  
+  @media (max-width: 400px) {
+    .auth-container {
+      padding: 0;
+    }
+  
+    
+    .login {
+      width: 100%;
+    }
+  }
+  
