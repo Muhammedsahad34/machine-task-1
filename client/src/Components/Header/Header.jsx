@@ -89,7 +89,7 @@ function Header() {
                     <Avatar alt="User Avatar" src="/path/to/user-avatar.jpg" />
 
                     <Typography variant="body1" sx={{ marginLeft: '10px' }}>
-                        {userDetails !== null?userDetails?.user?.email:'Username'}
+                        {userDetails !== null?userDetails?.user?.email:'email'}
                     </Typography>
                 </div>
             </Toolbar>
