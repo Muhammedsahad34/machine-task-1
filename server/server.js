@@ -19,7 +19,7 @@ const PORT = process.env.PORT || 3001;
 app.use(bodyParser.json());
 app.use(express.json());
 app.use(cors({
-    origin: ["http://localhost:3000"],
+    origin: ["https://machine-task-1-t06e.onrender.com"],
     methods: ["POST", "GET"],
     credentials: true
 }
