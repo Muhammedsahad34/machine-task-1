@@ -1,2 +1,2 @@
-export const baseUrl = 'http://localhost:3001';
-export const imageUrl = 'http://localhost:3001/images/product-images';
+export const baseUrl = 'https://lets-buy-backend.onrender.com';
+export const imageUrl = 'https://lets-buy-backend.onrender.com/images/product-images';
