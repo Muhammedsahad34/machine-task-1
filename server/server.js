@@ -27,7 +27,7 @@ app.use(cors({
 app.use(cookieParser());
 app.use(session({
     name: "Let's-Buy", secret: "Key", cookie: { maxAge: 1000 * 60 * 60 * 24,httpOnly: false, 
-        secure: false }, resave: false,
+        secure: true }, resave: false,
     saveUninitialized: false,
 }));
 
