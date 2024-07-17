@@ -11,6 +11,7 @@ const multer = require('multer');
 const UserModel = require('./models/UserSchema');
 const ProductModel = require('./models/ProductSchema');
 const CartModel = require('./models/CartSchema');
+const MongoStrore = require('connect-mongo');
 
 //setuping middleware
 const app = express();
@@ -25,14 +26,23 @@ app.use(cors({
 }
 ));
 app.use(cookieParser());
-app.use(session({
-    name: "Let's-Buy", secret: "Key", cookie: { maxAge: 1000 * 60 * 60 * 24,httpOnly: false, 
-        secure: true }, resave: false,
-    saveUninitialized: false,
-}));
+
 
 //database connection
 mongoose.connect(process.env.MONGODB_URI);
+app.set('trust proxy', 1);
+app.use(session({
+    name: "Let's-Buy", secret: "Key",
+    store: MongoStrore.create({
+        mongoUrl:process.env.MONGODB_URI,
+        collectionName: "sessions"
+
+    }),
+    cookie: { maxAge: 1000 * 60 * 60 * 24,httpOnly: true, 
+        secure: true }, 
+    resave: false,
+    saveUninitialized: false,
+}));
 app.use(express.static('public'));
 //Storage for product imges
 const storage = multer.diskStorage({
